@@ -15,10 +15,11 @@
     <section>
         <form method="get">
             <?php
-            if (isset($_GET["gerar"])) {
-                $num = rand(0, 100);
-                echo "<h3>o número gerado é: $num</h3>";
-            };
+            $min = 0;
+            $max = 100;
+            $numero = mt_rand($min, $max);
+
+            echo "O numero gerado foi: $numero";
             ?>
             <button type="submit" name="gerar">Gerar</button>
         </form>

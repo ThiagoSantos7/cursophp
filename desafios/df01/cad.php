@@ -14,7 +14,7 @@
     </header>
     <form>
         <?php
-        $numero = $_GET["numero"];
+        $numero = $_GET["numero"] ?? 0;
         $antecessor = $numero - 1;
         $sucessor = $numero + 1;
 
@@ -23,7 +23,7 @@
         <p>E o sucecessor do seu numero é <stgrong>$sucessor</strong></p>"
 
         ?>
-        <a href="javascript:history.go(-1)">Voltar ao inicio</a>
+        <a href="javascript:history.go(-1)">&#x2B05; Voltar</a>
     </form>
 </body>
 
