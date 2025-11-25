@@ -13,21 +13,16 @@
         <h1>Resultado da conversão em dólar</h1>
         <form>
             <?php
-            $carteira = $_GET["carteira"];
-            $formatReal = number_format($carteira, 2, ",", ".");
+            $real = $_GET["carteira"];
+            $padrão = numfmt_create("pt-BR", NumberFormatter::CURRENCY);
+            $dolar = 5.38;
+            $conversao = $real / $dolar;
 
-            $dolar = 5.40;
-            $formatDolar = number_format($dolar, 2, ".");
-
-            $result = $carteira / $dolar;
-            $formatResult = number_format($result, 2, ".");
-
-            echo "<h3>Conversão</h3>
-            <ul>
-            <li>Valor do dolar = US$ $formatDolar</li>
-            <li>Valor em saldo = R$ $formatReal</li>
-            <li>Conversão para dólar = US$ $formatResult</li>
+            echo "<ul>
+            <li>Seu saldo " . numfmt_format_currency($padrão, $real, "BRL") . "</li>
+            <li>Equivale em dolar <strong>" . numfmt_format_currency($padrão, $conversao, "USD") . "</strong></li>
             </ul>";
+
             ?>
         </form>
         <a href="javascript:history.go(-1)">Voltar ao inicio</a>
