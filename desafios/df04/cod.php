@@ -13,25 +13,24 @@
         <h1>Resultado da conversão em dólar</h1>
         <form>
             <?php
+
             $real = $_GET["carteira"];
             $padrão = numfmt_create("pt-BR", NumberFormatter::CURRENCY);
-            #cotação vinda da api do banco central
 
-            $inicio = date("m-d-Y", strtotime("-7 days")); # Inicio será a data de hoje menos 7 dias sempre.
-            $fim = date("m-d-Y"); # O fim será a data de hoje
+            $inicio = date("m-d-Y", strtotime("-7 days")); #O inicio da cotação será a data de hoje menos 7 dias
+            $fim = date("m-d-Y"); #O final será a data de hoje
 
-            #cotação vinda da api do banco central
-            $url = 'https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarPeriodo(dataInicial=@dataInicial,dataFinalCotacao=@dataFinalCotacao)?@dataInicial=\'' . $inicio . '\'&@dataFinalCotacao=\'' . $fim . '\'&$top=1&$orderby=dataHoraCotacao%20desc&$format=json&$select=cotacaoCompra,dataHoraCotacao';
+            $url = 'https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarPeriodo(dataInicial=@dataInicial,dataFinalCotacao=@dataFinalCotacao)?@dataInicial=\'' . $inicio . '\'&@dataFinalCotacao=\'' . $fim . '\'&$top=1&$format=json&$select=cotacaoCompra,dataHoraCotacao';
 
             $dados = json_decode(file_get_contents($url), true);
-            $cotacao = $dados["value"][0]["cotacaoCompra"];
-
-            $conversao = $real / $cotacao;
+            $cotacaoD = $dados["value"][0]["cotacaoCompra"];
+            $conversao = $real / $cotacaoD;
 
             echo "<ul>
-            <li>Seu saldo " . numfmt_format_currency($padrão, $real, "BRL") . "</li>
-            <li>Equivale em dolar <strong>" . numfmt_format_currency($padrão, $conversao, "USD") . "</strong></li>
-            </ul>";
+                <li>Cotação dólar: " . number_format($cotacaoD, 2, '.', ',') . "</li>
+                <li>Saldo em carteira: " . numfmt_format_currency($padrão, $real, "BRL") . " </li>
+                <li>Conversão para dólar: " . number_format($conversao, 2, '.', ',') . "</li>
+                </ul>"
 
             ?>
         </form>
