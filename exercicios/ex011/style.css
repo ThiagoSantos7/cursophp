@@ -1,0 +1,85 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(to right, rgb(22, 150, 49), rgb(85, 185, 107), rgb(120, 219, 143) );
+}
+
+section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    border-bottom: 2px solid green;
+    border-right: 2px solid green;
+    border-radius: 10px;
+    padding: 30px 10px;
+    width: 450px;
+    background-color: rgba(0, 128, 0, 0.171);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-weight: 550;
+}
+
+h1{
+    font-size: 24px;
+    text-align: center;
+}
+
+label{
+    background-color: rgba(0, 128, 0, 0.452);
+    width: 250px;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+input{
+    width: 350px;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    color: black;
+}
+
+.button{
+    cursor: pointer;
+    padding: 10px;
+    background-color: rgb(1, 107, 1);
+    color: white;
+    font-weight: 550;
+
+}
+.button:active{
+    opacity: 0.8;
+}
+
+a{
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid green;
+    border-right: 1px solid green;
+    padding: 8px;
+    border-radius: 5px;
+    background-color: rgba(0, 128, 0, 0.384);
+    font-size: 14px;
+}
+a:hover{
+    background-color: rgba(0, 128, 0, 0.212);
+}
+
