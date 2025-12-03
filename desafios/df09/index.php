@@ -42,7 +42,7 @@
 
             <form>
                 <?php
-                echo "<p>Analisando os valores $v1 e $v2:<br> A <strong>Média Aritmética Simples</strong> entre os valores é igual a " . number_format($mediaS, 2, ",", ".") . "<br><br
+                echo "<p>Analisando os valores $v1 e $v2:<br><br> A <strong>Média Aritmética Simples</strong> entre os valores é igual a " . number_format($mediaS, 2, ",", ".") . "<br><br>
                 A <strong>Média Aritmética Ponderada</strong> com pesos $p1 e $p2 é igual a " . number_format($mediaPonderada, 2, ",", ".") . "</p>"
                 ?>
             </form>
