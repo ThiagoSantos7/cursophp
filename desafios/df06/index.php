@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
     <title>Salário</title>
 </head>
 
 <body>
     <?php
     $dividendo = $_GET["dividendo"] ?? 0;
-    $divisor = $_GET["divisor"] ?? 0;
+    $divisor = $_GET["divisor"] ?? 1;
     ?>
     <main>
         <section>
@@ -19,9 +19,9 @@
             <form <?= $_SERVER['PHP_SELF'] ?> method="get">
 
                 <label for="dividendo">Dividendo</label>
-                <input type="number" name="dividendo" id="idDividendo">
+                <input type="number" name="dividendo" id="idDividendo" value="<?= $dividendo ?>">
                 <label for="divisor">Divisor</label>
-                <input type="number" name="divisor" id="idDivisor">
+                <input type="number" name="divisor" id="idDivisor" value="<?= $divisor ?>">
                 <input class="btn" type="submit" value="calcular">
 
             </form>
@@ -29,23 +29,23 @@
 
         <section>
             <h3>Estrutura da divisão</h3>
-            <section class="div0">
-                <?php
-                $div = $dividendo / $divisor;
-                $res = $dividendo % $divisor;
+            <?php
+            $div = intdiv($dividendo, $divisor);
+            $res = $dividendo % $divisor;
+            ?>
 
-                echo "
-                <div class=" . "borda1" . ">
-                <h2>$dividendo</h2>
-                <h2>$res</h2>
-                </div>
-                <div class= " . "bordas" . ">
-                <h2 class=" . "h2" . ">$divisor</h2>
-                <h2>" . number_format($div) . "</h2>
-                </div>";
+            <table class="divisao">
+                <tr>
+                    <td><?= $dividendo ?></td>
+                    <td><?= $divisor ?></td>
+                </tr>
 
-                ?>
-            </section>
+                <tr>
+                    <td><?= $res ?></td>
+                    <td><?= $div  ?></td>
+                </tr>
+            </table>
+
         </section>
     </main>
 </body>
