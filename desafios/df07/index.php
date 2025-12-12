@@ -4,37 +4,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./styles.css">
     <title>Salário</title>
 </head>
 
 <body>
-
     <?php
+    $min = 1518;
+    $sal = $_GET["salario"] ?? $min;
 
-    $sal = $_GET["sal"] ?? 0;
-    $salMin = 1518;
-
+    $padrao = numfmt_create("pt-BR", NumberFormatter::CURRENCY);
     ?>
     <main>
         <section>
-            <form action="<?= $_SERVER["PHP_SELF"] ?>" method=" get">
-                <h1>Informe seu salário</h1>
-                <label for="salario">Salário</label>
-                <input type="number" name="sal">
-                <p>Considerando o salário minimo de <strong>R$1518,00</strong></p>
-                <input class="btn" type="submit" value="Calcular">
+            <form action="<?= $_SERVER["PHP_SELF"] ?>" method="get">
+                <label for="salario">Salário(R$)</label>
+                <input type="number" name="salario" value="<?= $sal ?>">
+                <p>Considerando o salário mínimo de R$ 1518,00</p>
+                <input class=" btn" type="submit" value="Calcular">
             </form>
-        </section><br>
-        <section class="divisoes">
-            <h2>Resultado final</h2>
-            <?php
-            $padrao = numfmt_create("pt-BR", NumberFormatter::CURRENCY);
-            $div = $sal / $salMin;
-            $res = $sal % $salMin;
+        </section>
+        <br>
+        <section>
+            <form>
+                <?php
 
-            echo "<p>Considerando seu salário de " . numfmt_format_currency($padrao, $sal, "BRL") . " ganha <strong>" . number_format($div) . " salários mínimos </strong>+ " . numfmt_format_currency($padrao, $res, "BRL") . ".</p>";
-            ?>
+                $result = intdiv($sal, $min);
+                $res = $sal % $min;
+
+                print "<p>Com base no seu salario de " . numfmt_format_currency($padrao, $sal, "BRL") . " identificamos que: </p>";
+
+                print "
+                <ul>
+                    <li>Você ganha $result salario(s) minimo(s) por mês.</li>
+                    <li>+ " . numfmt_format_currency($padrao, $res, "BRL") . " por mês.</li>
+                </ul>";
+
+                ?>
+            </form>
         </section>
     </main>
 </body>
