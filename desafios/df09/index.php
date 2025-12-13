@@ -4,36 +4,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./styles.css">
     <title>Calculo de médias</title>
 </head>
 
 <body>
     <?php
-    $v1 = $_GET["v1"] ?? 0;
-    $p1 = $_GET["p1"] ?? 0;
-    $v2 = $_GET["v2"] ?? 0;
-    $p2 = $_GET["p2"] ?? 0;
+    $v1 = $_GET["v1"] ?? 1;
+    $p1 = $_GET["p1"] ?? 1;
+    $v2 = $_GET["v2"] ?? 1;
+    $p2 = $_GET["p2"] ?? 1;
 
     $mediaS = ($v1 + $v2) / 2;
-    #meida ponderada consiste em somar os pesos, multiplicar valor1 por peso1 + valor2 por peso2 e dividir a soma pelo resultado da multiplicaçaõ entre valores e pesos.
-    $somaPesos = $p1 + $p2;
-    $somaPonderada = ($v1 * $p1) + ($v2 * $p2);
-    $mediaPonderada =  $somaPonderada / $somaPesos;
+    $mediaPonderada = ($v1 * $p1 + $v2 * $p2) / ($p1 + $p2);
+
     ?>
     <main>
         <section>
             <h2>Calcule as médias</h2>
             <form action="<?= $_SERVER['PHP_SELF'] ?>" method="get">
                 <label for="v1'">1º Valor</label>
-                <input type="number" name="v1" id="idv1" step="0.01">
+                <input type="number" name="v1" id="idv1" step="0.01" required value="<?= $v1 ?>">
                 <label for="p1">1º Peso</label>
-                <input type="number" name="p1" id="idp1" step="0.01">
+                <input type="number" name="p1" id="idp1" step="0.01" required value="<?= $p1 ?>">
                 <label for="v2">2º Valor</label>
-                <input type="number" name="v2" id="idv2" step="0.01">
+                <input type="number" name="v2" id="idv2" step="0.01" required value="<?= $v2 ?>">
                 <label for="p2">2º Peso</label>
-                <input type="number" name="p2" id="idp2" step="0.01">
-                <input class="btn" type="submit" value="calcular">
+                <input type="number" name="p2" id="idp2" step="0.01" required value="<?= $p2 ?>">
+                <input class="btn" type="submit" value="calcular médias">
             </form>
         </section><br>
 
