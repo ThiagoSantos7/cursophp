@@ -10,36 +10,42 @@
 
 <body>
     <?php
-    $total_seg = $_GET["seg"] ?? 0;
-    $semanas = intdiv($total_seg, 604800);
-    $dias = intdiv($total_seg, 86400);
-    $horas = intdiv($total_seg, 3600);
-    $minutos = intdiv($total_seg, 60);
-    $resto_seg = $total_seg % 60;
+    $total = $_GET["total_seg"] ?? 0;
+    $sobra = $total;
+    # Calculo de semanas
+    $semanas = (int)($sobra / 604800);
+    $sobra = $sobra % 604800;
+    # Calculo de dias
+    $dias = (int)($sobra / 86400);
+    $sobra = $sobra % 86400;
+    # Calculo de horas
+    $horas = (int)($sobra / 3600);
+    $sobra = $sobra % 3600;
+    # Calculo minutos
+    $minutos = (int)($sobra / 60);
+    # Calculo segundos
+    $segundo = $sobra;
     ?>
     <main>
         <section>
-            <h1>Calculadora de tempo</h1>
+            <h1>Calculadora do tempo</h1>
             <form action="<?= $_SERVER["PHP_SELF"] ?>" method="get">
-                <label for="seg">Qual o total de segundos</label>
-                <input type="number" name="seg" id="idseg">
-                <input type="submit" value="Calcular" class="btn">
+                <label for="total_seg">Digite o total de segundos</label>
+                <input type="number" name="total_seg">
+                <input class="btn" type="submit" value="Calcular">
             </form>
         </section>
         <br>
         <section>
-            <?php
-            print "<p>Analisando os segundos digitados por você, <strong>$total_seg segundos</strong> equivalem a: 
-            </p>
+            <h2>Resultado</h2>
+            <h4>Analisando o numero escolhido de <?= number_format($total, 0, ",", ".") ?></h4>
             <ul>
-                <li>$semanas semanas</li>
-                <li>$dias dias</li>
-                <li>$horas horas</li>
-                <li>$minutos minutos</li>
-                <li>$resto_seg segundos</li>
-            </ul> 
-            ";
-            ?>
+                <li> <?= $semanas ?> Semana(s)</li>
+                <li> <?= $dias ?> Dia(s)</li>
+                <li> <?= $horas ?> Hora(s)</li>
+                <li> <?= $minutos ?> Minuto(s)</li>
+                <li> <?= $segundo ?> Segundo(s)</li>
+            </ul>
         </section>
     </main>
 </body>
