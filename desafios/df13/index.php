@@ -33,7 +33,7 @@
                 <label for="valor">Qual valor você deseja sacar? (R$) <sup>*</sup> </label>
                 <input type="number" name="valor" step="5" value="<?= $valor ?>">
                 <p>
-                    <sup>*</sup> Notas disponiveis R$ 100, R$ 50, R$ 10, R$ 5. <?= "\u{1F30E}" ?>
+                    <sup>*</sup> Notas disponiveis R$ 100, R$ 50, R$ 10, R$ 5.
                 </p>
                 <input class="btn" type="submit" value="Sacar">
             </form>
