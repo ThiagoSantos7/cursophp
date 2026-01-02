@@ -21,14 +21,14 @@
             <?php
 
             if ($v1 === "" && $v2 === "") {
-                echo "Operação sem numeros determinados, tente novamente.";
+                echo "<h2>Digite valores para que possa obter o resultado!</h2>";
             } else {
-                while ($v1 < $v2) {
+                while ($v1 <= $v2) {
                     echo "$v1 ";
                     $v1 += $increment;
                 }
 
-                while ($v1 > $v2) {
+                while ($v1 >= $v2) {
                     echo "$v1 ";
                     $v1 -= $increment;
                 }
