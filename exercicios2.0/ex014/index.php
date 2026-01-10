@@ -9,7 +9,7 @@
 
 <body>
     <div>
-        <form action="<?= $_SERVER["PHP_SELF"] ?>" method="get">
+        <form action="cod.php" method="get">
             <label for="num">Escolha um número</label>
             <select name="num" id="idnum">
                 <?php
@@ -20,24 +20,6 @@
             </select>
             <input type="submit" value="Tabuada">
         </form>
-    </div>
-    <br>
-    <div>
-        <?php
-
-        if ($num = isset($_GET["num"]) ? $_GET["num"] : 1) {
-            echo "<h1>Essa é a tabuada do $num.</h1>";
-
-            for ($c = 1; $c <= 10; $c++) {
-                $resultado = $num * $c;
-                echo "<h4>$num x $c = $resultado</h4>";
-            }
-        } else {
-            echo "Operação inválida!";
-        }
-
-
-        ?>
     </div>
 </body>
 
