@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -23,7 +23,7 @@
             <form action="<?= $_SERVER["PHP_SELF"] ?>" method="get">
                 <label for="num">Escolha 5 números:</label><br><br>
                 <?php
-                for ($n = 1; $n <= 5; $n++) {
+                for ($c = 1; $c <= 5; $c++) {
                     echo "<input type='number' name='num[]' min='1' max='100' required><br><br>";
                 }
                 ?>
@@ -42,6 +42,7 @@
                 $tot = func_num_args();
 
                 $s = 0;
+
                 for ($i = 0; $i < $tot; $i++) {
                     $s += $p[$i];
                 }
@@ -50,7 +51,8 @@
 
             $res = soma(...$num);
 
-            echo "<p>O valor total dos numero resulta em: <strong>$res</strong></p>";
+            echo "A soma dos valores dados resultam em: $res";
+
             ?>
         </fieldset>
     </main>
