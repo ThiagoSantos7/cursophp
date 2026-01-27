@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+    <title>Boletim Aluno</title>
+</head>
+
+<body>
+    <main>
+        <section>
+            <h1>Olá aluno!<br> Está é a seção de boletim virtual.</h1>
+            <form action="cod.php" method="get">
+                <label for="nome">Digite seu primeiro nome:</label>
+                <input type="text" name="nome" placeholder="Nome" required>
+                <label for="ra">Digite seu RA:</label>
+                <input type="number" min="1" placeholder="Ex: 2505" required>
+                <input type="submit" class="btn" value="Verificar">
+            </form>
+        </section>
+    </main>
+</body>
+
+</html>
