@@ -1,0 +1,164 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Nunito Sans", sans-serif;
+}
+
+body{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: black;
+}
+
+header{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    background-image: linear-gradient(to right, black, rgb(75, 75, 75), black);
+    color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.425);
+}
+
+main{
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+}
+
+main h1{
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.445);
+    color: white;
+    border-bottom-left-radius: 50px;
+    border-top-right-radius: 20px;
+    box-shadow: 0px 0px 10px rgb(61, 61, 61);
+    
+}
+
+.sct-main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.sct-list{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    padding: 20px;
+    
+}
+
+.sct-list ul li{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgb(150, 150, 150);
+    font-size: 18px;
+    padding: 10px;
+    width: 200px;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.sct-list ul{
+    transition: 0.3s;
+}
+
+.sct-list ul:hover{
+    background-color: rgba(0, 0, 0, 0.767);
+    color: white;
+}
+
+.sct-list input{
+    padding: 5px 10px;
+    font-size: 15px;
+    font-weight: 600;
+    border: none;
+    background-color: green;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.sct-list input:hover{
+    background-color: rgb(0, 196, 0);
+}
+.sct-list input:active{
+    transform: scale(0.9);
+}
+
+.sct-cart{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+    border-top: 2px solid black;
+    border-right: 2px solid black;
+    border-top-right-radius: 10px;
+    box-shadow: 0px 0px 10px rgb(175, 175, 175);
+}
+
+
+
+.sct-cart ul{
+    margin-top: 5px;
+    display: flex;
+    gap: 10px;
+    list-style: none;
+    padding: 10px 20px;
+    text-align: center;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    margin-bottom: 10px;
+}
+
+.sct-cart li{
+    padding: 10px 25px;
+    line-height: 30px;
+}
+
+.btn-2{
+    padding: 5px 10px;
+    font-size: 15px;
+    font-weight: 600;
+    border: none;
+    background-color: green;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-2:hover{
+    background-color: rgb(0, 196, 0);
+}
+.btn-2:active{
+    transform: scale(0.9);
+}

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -23,11 +23,11 @@
         array('nome' => 'Teclado', 'desc' => 'Logitech - MX Key Mini ', 'categoria' => 'Periféricos', 'preco' => 456),
         array('nome' => 'Mouse Bluetooth', 'desc' => 'Eletro cd - Mini', 'categoria' => 'Periféricos', 'preco' => 250),
         array('nome' => 'Monitor', 'desc' => 'Samsung - 45 polegadas ', 'categoria' => 'Periféricos', 'preco' => 700),
+        array('nome' => 'Microfone', 'desc' => 'Fifine - RGB ', 'categoria' => 'Periféricos', 'preco' => 245.50),
         array('nome' => 'Placa Mãe', 'desc' => 'ASUS - TUF X670E ', 'categoria' => 'Internos', 'preco' => 2718.23),
         array('nome' => 'Placa de Vídeo', 'desc' => 'Gigabite RTX - 5090 MASTER ', 'categoria' => 'Internos', 'preco' => 26599.99),
         array('nome' => 'Processador', 'desc' => 'AMD - Ryzen 7 ', 'categoria' => 'Internos', 'preco' => 3408.92),
         array('nome' => 'Fonte Gamer', 'desc' => 'Rise Mode - Zeus 1000W ', 'categoria' => 'Internos', 'preco' => 699.99),
-        array('nome' => 'SSD', 'desc' => 'WD Green - M-2', 'categoria' => 'Internos', 'preco' => 1063.91),
     );
 
     ?>
@@ -77,7 +77,7 @@
                         }
                         break;
                     case 2:
-
+                        echo "<section class='sct-media'>";
                         $soma = 0;
                         foreach ($produtos as $prod) {
                             $soma += $prod['preco'];
@@ -87,17 +87,18 @@
                         foreach ($produtos as $vl) {
                             if ($vl['preco'] > $result) {
                                 echo "
-                                <ul class='ul-ed'>
-                                    <li>
-                                        <h3>Preço médio dos valores dos produtos:<h3>
-                                        <h4>" . $vl['nome'] . "</h4>
-                                        <h4>R$ " . formatar($vl['preco']) . "</h4>
-                                        <h3>Reusultado preço médio: R$" . formatar($result) . "</h3>
-                                    </li>
-                                </ul>
-                                ";
+                                    <ul class='ul-ed'>
+                                        <li>
+                                            <h3>Preço médio dos valores dos produtos:<h3>
+                                            <h4>" . $vl['nome'] . "</h4>
+                                            <h4>R$ " . formatar($vl['preco']) . "</h4>
+                                            <h3>Preço médio: R$" . formatar($result) . "</h3>
+                                        </li>
+                                    </ul>
+                                    ";
                             }
                         }
+                        echo "</section>";
                         break;
                     case 3:
 
@@ -134,6 +135,7 @@
                         }
                         break;
                     case 5:
+                        echo "<section class='sct-res'>";
                         echo "<h2>Resumo dos Produtos:</h2>";
 
                         # Valor total em soma, valor medio em media.
@@ -163,15 +165,12 @@
                         }
 
                         echo "
-                        <ul>
-                            <li>
-                                <h4>Total dos Preços: " . formatar($soma) . "</h4>
-                                <h4>Média entre Preços: " . formatar($media) . "</h4>
-                                <h4>Produto mais caro: " . $nomeMaior . " | Valor: " . formatar($maior) . "</h4>
-                                <h4>Produto mais barato: " . $nomeMenor . " | Valor: " . formatar($menor) . "</h4>
-                            </li>
-                        </ul>
-                    ";
+                            <h4>Total dos Preços: " . formatar($soma) . "</h4>
+                            <h4>Média entre Preços: " . formatar($media) . "</h4>
+                            <h4>Produto mais caro: " . $nomeMaior . " | Valor: " . formatar($maior) . "</h4>
+                            <h4>Produto mais barato: " . $nomeMenor . " | Valor: " . formatar($menor) . "</h4>
+                        ";
+                        echo "</section>";
                         break;
                     default:
                         echo "<h1>Conheça nosso produtos acessando os filtros... :)</h1>";

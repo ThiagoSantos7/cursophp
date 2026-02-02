@@ -139,3 +139,20 @@ main{
 .sct-prod ul li{
     line-height: 30px;
 } 
+
+.sct-media{
+    width: 1500px;
+    margin-left: 150px;
+}
+
+.sct-res{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 1500px;
+    margin-left: 150px;
+    border-top: 1px solid white;
+    padding-top: 20px;
+}
