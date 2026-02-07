@@ -1,0 +1,175 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Nunito Sans", sans-serif;
+}
+
+body{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(to right, #f2eafd, #fdf0ff, #f2eafd);
+}
+
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    background-image: linear-gradient(to right, rgb(40, 12, 85), rgb(96, 24, 179), rgb(40, 12, 85));
+    color: white;
+    box-shadow: 0px 0px 10px rgb(117, 117, 117);
+    z-index: +1;
+}
+
+main{
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 20px;
+}
+
+.h1{
+    text-align: center;
+    padding: 5px 20px;
+    border-bottom-left-radius: 35px;
+    border-top-right-radius: 10px;
+    background-color: rgba(22, 0, 58, 0.308);
+    color: white;
+}
+
+.sct-main{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+}
+
+.carrinho{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 25%;
+    margin-top: 60px;
+    padding: 20px;
+    border-right: 3px solid rgb(56, 4, 124);
+    border-top-right-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    background-color: rgb(248, 242, 255);
+}
+
+.cart{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.ul-cart{
+    list-style: none;
+    border: 1px solid black;
+    padding: 5px 15px;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(177, 177, 177, 0.507);
+    line-height: 28px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.ul-cart:hover{
+    background-color: rgb(117, 48, 182);
+    color: white;
+    box-shadow: 0px 0px 10px rgb(131, 23, 255);
+    border: 1px solid rgb(194, 161, 255);
+}
+
+.btn{
+    padding: 5px 10px;
+    border: 2px solid rgb(98, 0, 190);
+    text-align: center;
+    font-weight: 700;
+    background-color: transparent;
+    color: rgb(98, 0, 190);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover{
+    background-color: rgb(98, 0, 190);
+    color: white;
+    box-shadow: 0px 0px 10px rgb(210, 161, 255);
+}
+
+.btn:active{
+    background-color: rgb(155, 48, 255);
+}
+
+.sct-two{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+}
+
+.sct-two h1{
+    margin-top: 100px;
+}
+
+.list{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 50px;
+}
+
+.ul-sct{
+    list-style: none;
+    border: 1px solid black;
+    padding: 15px 40px;
+    text-align: center;
+    line-height: 30px;
+    box-shadow: 0px 0px 10px rgba(177, 177, 177, 0.507);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.ul-sct:hover{
+    background-color: rgb(117, 48, 182);
+    color: white;
+    box-shadow: 0px 0px 10px rgba(131, 23, 255, 0.747);
+    border: 1px solid rgb(194, 161, 255);
+}
+
+.btnA{
+    padding: 5px 10px;
+    border: 2px solid green;
+    text-align: center;
+    font-weight: 700;
+    background-color: transparent;
+    color: green;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btnA:hover{
+    background-color: green;
+    color: white;
+    box-shadow: 0px 0px 10px rgb(35, 206, 75);
+}
