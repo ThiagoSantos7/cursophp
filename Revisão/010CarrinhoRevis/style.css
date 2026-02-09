@@ -48,9 +48,14 @@ main h1{
     margin-bottom: 15px;
 }
 
+main .h1{
+    margin-top: 100px;
+    margin-right: 490px;
+}
+
 .main-sct{
     display: flex;
-    gap: 50px;
+    gap: 500px;
 }
 
 .sct-cart{
@@ -66,6 +71,7 @@ main h1{
     align-items: center;
     gap: 30px;
     border-left: 3px solid rgb(171, 80, 255);
+    box-shadow: 0px 0px 10px rgb(181, 135, 255);
 }
 
 .sct-grid{
@@ -84,6 +90,7 @@ main h1{
     padding: 5px 10px;
     width: 200px;
     height: 70px;
+    border-radius: 10px;
 }
 
 .sct-grid li{
@@ -116,4 +123,43 @@ main h1{
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 50px;
     margin-top: 100px;
+}
+
+.itens ul{
+    border-radius: 10px;
+    list-style: none;
+    border: 2px solid rgb(156, 4, 245);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 20px;
+    text-align: center;
+    line-height: 30px;
+    box-shadow: 0px 0px 10px rgb(141, 54, 212);
+    transition: 0.3s;
+}
+
+.itens ul:hover{
+    background-color: rgb(156, 4, 245);
+    transform: scale(1.1);
+}
+
+.itens input{
+    border: none;
+    padding: 5px 10px;
+    color: white;
+    font-weight: 700;
+    background-color: green;
+    border-radius: 10px;
+    margin-top: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.itens input:hover{
+    background-color: rgb(0, 168, 0);
+}
+
+.itens input:active{
+    transform: scale(0.9);
 }
